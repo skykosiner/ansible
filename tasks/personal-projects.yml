@@ -1,0 +1,46 @@
+- name: Personal Project My Website
+  ansible.builtin.git:
+    repo: 'http://github.com/yonikosiner/yonikosiner-com'
+    bare: true
+    dest: "{{ lookup('env', 'HOME') }}/personal/yonikosiner-com"
+  tags:
+    - install
+    - dotfiles
+    - personal-project
+- name: My Website Master Checkout
+  shell: cd ~/personal/yonikosiner-com && git fetch && git worktree add master master
+  tags:
+    - install
+    - dotfiles
+    - personal-project
+- name: Personal Project Leraning C
+  ansible.builtin.git:
+    repo: 'http://github.com/yonikosiner/learning_c'
+    bare: true
+    dest: "{{ lookup('env', 'HOME') }}/personal/learning_c"
+  tags:
+    - install
+    - dotfiles
+    - personal-project
+- name: My Website Master Checkout
+  shell: cd ~/personal/learning_c && git fetch && git worktree add master master
+  tags:
+    - install
+    - dotfiles
+    - personal-project
+- name: Personal Project Leraning Go
+  ansible.builtin.git:
+    repo: 'http://github.com/yonikosiner/learning_go'
+    bare: true
+    dest: "{{ lookup('env', 'HOME') }}/personal/learning_go"
+  tags:
+    - install
+    - dotfiles
+    - personal-project
+- name: My Website Master Checkout
+  shell: cd ~/personal/learning_go && git fetch && git worktree add master master
+  tags:
+    - install
+    - dotfiles
+    - personal-project
+
